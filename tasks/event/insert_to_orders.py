@@ -113,7 +113,7 @@ class InsertToOrders:
                 '{data['exchange_order_id']}',
                 '{data['type']}',
                 '{data['status']}',
-                '{data['exchange']}',
+                '{data['exchange_name']}',
                 '{data['side']}',
                 '{data['symbol']}',
                 {data['expect_price']},
