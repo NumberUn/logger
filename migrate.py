@@ -26,4 +26,4 @@ def main(checking=True):
 
 
 if __name__ == '__main__':
-    main()
+    main(checking=False)

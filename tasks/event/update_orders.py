@@ -40,7 +40,7 @@ class UpdateOrders:
             datetime_update = '{payload['datetime_update']}',
             ts_update = {payload['ts_update']}
         where 
-            exchange = '{payload['exchange']}' and 
+            exchange = '{payload['exchange_name']}' and 
             exchange_order_id = '{payload['exchange_order_id']}'
         """
 
