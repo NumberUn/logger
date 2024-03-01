@@ -105,7 +105,7 @@ class InsertToOrders:
                 env,
                 oneway_ping_orderbook,
                 oneway_ping_order,
-                inner_ping,
+                inner_ping
                 )
             values(
                 '{data['id']}',
@@ -131,7 +131,7 @@ class InsertToOrders:
                 '{data['env']}',
                 {data['oneway_ping_orderbook']},
                 {data['oneway_ping_order']},
-                {data['inner_ping']},
+                {data['inner_ping']}
                 )         
             """
         await cursor.execute(sql)

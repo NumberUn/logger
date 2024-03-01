@@ -121,7 +121,7 @@ class InsertToArbitragePossibilities:
                      '{data['status']}',
                      '{data['bot_launch_id']}',
                      '{data['env']}',
-                     {data['target_profit']},
+                     {data['target_profit']}
                 )         
             """
         await cursor.execute(sql)
