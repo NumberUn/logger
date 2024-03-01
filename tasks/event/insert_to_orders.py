@@ -103,8 +103,8 @@ class InsertToOrders:
                 factual_fee,
                 order_place_time,
                 env,
-                oneway_orderbook_ping,
-                oneway_order_ping,
+                oneway_ping_orderbook,
+                oneway_ping_order,
                 inner_ping,
                 )
             values(
@@ -129,8 +129,8 @@ class InsertToOrders:
                 {data['factual_fee']},
                 {data['order_place_time']},
                 '{data['env']}',
-                {data['oneway_orderbook_ping']},
-                {data['oneway_order_ping']},
+                {data['oneway_ping_orderbook']},
+                {data['oneway_ping_order']},
                 {data['inner_ping']},
                 )         
             """
