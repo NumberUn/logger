@@ -102,7 +102,10 @@ class InsertToOrders:
                 factual_amount_usd,
                 factual_fee,
                 order_place_time,
-                env
+                env,
+                oneway_orderbook_ping,
+                oneway_order_ping,
+                inner_ping,
                 )
             values(
                 '{data['id']}',
@@ -125,7 +128,10 @@ class InsertToOrders:
                 {data['factual_amount_usd']},
                 {data['factual_fee']},
                 {data['order_place_time']},
-                '{data['env']}'
+                '{data['env']}',
+                {data['oneway_orderbook_ping']},
+                {data['oneway_order_ping']},
+                {data['inner_ping']},
                 )         
             """
         await cursor.execute(sql)
