@@ -3,7 +3,6 @@ from logging.config import dictConfig
 from core.wrappers import try_exc_async
 
 
-
 dictConfig({'version': 1, 'disable_existing_loggers': False, 'formatters': {
                 'simple': {'format': '[%(asctime)s][%(threadName)s] %(funcName)s: %(message)s'}},
             'handlers': {'console': {'class': 'logging.StreamHandler', 'level': 'DEBUG', 'formatter': 'simple',
@@ -29,6 +28,9 @@ class UpdateOrders:
     @staticmethod
     @try_exc_async
     async def __update(payload, cursor) -> None:
+        exchange_name = payload.get('exchange_name')
+        if not exchange_name:
+            exchange_name = payload.get('exchange')
         sql = f"""
         update 
             orders
@@ -40,7 +42,7 @@ class UpdateOrders:
             datetime_update = '{payload['datetime_update']}',
             ts_update = {payload['ts_update']}
         where 
-            exchange = '{payload['exchange_name']}' and 
+            exchange = '{exchange_name}' and 
             exchange_order_id = '{payload['exchange_order_id']}'
         """
 
